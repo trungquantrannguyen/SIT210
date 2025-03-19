@@ -1,6 +1,7 @@
 /*
   Blink
 
+
   Turns an LED on for one second, then off for one second, repeatedly.
 
   Most Arduinos have an on-board LED you can control. On the UNO, MEGA and ZERO
@@ -26,6 +27,7 @@
 int shortTime = 100;
 int longTime = 300;
 int spaceTime = 700;
+int pin = 2;
 
 using namespace std;
 
@@ -45,7 +47,7 @@ unordered_map<char,string> morseCodeDictionary = {
 // the setup function runs once when you press reset or power the board
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(pin, OUTPUT);
 }
 
 // the loop function runs over and over again forever
@@ -74,8 +76,8 @@ void loop() {
 }
 
 void blink(int timing){
-    digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
+    digitalWrite(pin, HIGH);  // turn the LED on (HIGH is the voltage level)
   delay(timing);                      // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(pin, LOW);   // turn the LED off by making the voltage LOW
   delay(shortTime); 
 }
